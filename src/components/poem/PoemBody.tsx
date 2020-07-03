@@ -9,6 +9,11 @@ interface ITextChunk {
 const TextSpan = ({ isSelected, text }: ITextChunk) => (
   <span className={isSelected ? "is-selected" : "not-selected"}>
     <span className="text">{text}</span>
+    {isSelected && (
+      <svg style={{ position: "absolute" }}>
+        <circle cx="25" cy="25" r="10" />
+      </svg>
+    )}
   </span>
 );
 
